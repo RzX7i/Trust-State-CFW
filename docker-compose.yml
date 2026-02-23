@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  trust-state:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - DISCORD_GUILD_ID=${DISCORD_GUILD_ID}
+      - ADMIN_ROLE_ID=${ADMIN_ROLE_ID}
+    restart: unless-stopped
